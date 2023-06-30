@@ -7,7 +7,17 @@ class CashierPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Center(child: "Cashier".text,),
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        const SizedBox(
+          height: 64,
+          width: double.infinity,
+        ),
+        "Cashier".text.alignCenter,
+      ],
+    ),
     );
   }
 }

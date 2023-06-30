@@ -7,7 +7,17 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Center(child: "Profile".text,),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 64,
+            width: double.infinity,
+          ),
+          "Profile".text.alignCenter,
+        ],
+      ),
     );
   }
 }

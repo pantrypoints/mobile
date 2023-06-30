@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prenuer/modules/cashier/views/pages/cachier_page.dart';
@@ -47,12 +46,6 @@ class BottomNavigator extends GetView<BottomNavigatorController> {
       onWillPop: () async => false,
       child: Obx(() {
         return Scaffold(
-          appBar: AppBar(
-            title: Text(
-              _tabItems[controller.currentIndex.value].title,
-            ),
-            centerTitle: true, backgroundColor: Theme.of(context).primaryColor,
-          ),
           body: _tabItems[controller.currentIndex.value].widget,
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: controller.currentIndex.value,
@@ -62,7 +55,7 @@ class BottomNavigator extends GetView<BottomNavigatorController> {
               ..._tabItems.map((item) => BottomNavigationBarItem(
                   icon: item.icon,
                   label: item.title,
-                  backgroundColor: Theme.of(context).primaryColor))
+              ))
             ],
           ),
         );

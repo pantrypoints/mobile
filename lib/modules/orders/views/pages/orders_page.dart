@@ -7,7 +7,17 @@ class OrdersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Center(child: "Orders".text,),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 64,
+            width: double.infinity,
+          ),
+          "Orders".text.alignCenter,
+        ],
+      ),
     );
   }
 }
