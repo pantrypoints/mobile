@@ -1,0 +1,9 @@
+[
+  {"title":  "Feature 1", "description":  "Description 1", "image":  "assets/images/feature_image_1.jpg"},
+  {"title":  "Feature 2", "description":  "Description 2", "image":  "assets/images/feature_image_2.jpg"},
+  {"title":  "Feature 3", "description":  "Description 3", "image":  "assets/images/feature_image_3.jpg"},
+  {"title":  "Feature 4", "description":  "Description 4", "image":  "assets/images/feature_image_4.jpg"},
+  {"title":  "Feature 5", "description":  "Description 5", "image":  "assets/images/feature_image_5.jpg"},
+  {"title":  "Feature 6", "description":  "Description 6", "image":  "assets/images/feature_image_6.jpg"},
+  {"title":  "Feature 7", "description":  "Description 7", "image":  "assets/images/feature_image_7.jpg"}
+]
