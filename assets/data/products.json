@@ -1,5 +1,6 @@
 [
-  {"name": "Product 1", "description":  "Description1", "image": "assets/images/product_image_1.jpg", "categories":  []},
-  {"name": "Product 1", "description":  "Description2", "image": "assets/images/product_image_2.jpg", "categories":  []},
-  {"name": "Product 1", "description":  "Description3", "image": "assets/images/product_image_3.jpg", "categories":  []}
+  {"name": "Adidas", "description":  "Description1", "image": "https://enstack.pages.dev/a/adidas.jpg", "categories":  []},
+  {"name": "BBQ", "description":  "Description2", "image": "https://enstack.pages.dev/a/bbq.jpg", "categories":  []},
+  {"name": "Fishball", "description":  "Description3", "image": "https://enstack.pages.dev/a/squidballs.jpg", "categories":  []},
+  {"name": "Fish", "description":  "Description3", "image": "https://enstack.pages.dev/a/friedfish.jpg", "categories":  []}
 ]

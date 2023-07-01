@@ -70,7 +70,7 @@ class CashierPage extends GetView<CashierController> {
                             ...controller.products.map((element) => ListTile(
                               title: element.name.text,
                               subtitle: element.description.text,
-                              leading: Image.asset(element.image,
+                              leading: Image.network(element.image,
                                 fit: BoxFit.cover,
                               ),
                             ))
