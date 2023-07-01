@@ -25,8 +25,8 @@ class HomePage extends GetView<HomeController> {
               if (controller.hasFeature.value)
                 CarouselSlider(
                   options: CarouselOptions(
-                    height: 160,
-                    viewportFraction: 0.9,
+                    height: 180,
+                    viewportFraction: 1,
                     enlargeCenterPage: false,
                     scrollDirection: Axis.horizontal,
                     autoPlay: true,
@@ -36,7 +36,7 @@ class HomePage extends GetView<HomeController> {
                   ),
                   items: controller.features
                       .map((item) => Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 12),
+                            margin: const EdgeInsets.symmetric(horizontal: 4),
                             child: Stack(
                               children: [
                                 Center(
@@ -47,29 +47,183 @@ class HomePage extends GetView<HomeController> {
                                     top: 8,
                                     left: 8,
                                     child: Container(
-                                      decoration: BoxDecoration(
-                                        color: CustomColors.primaryColorLight,
-                                        borderRadius: BorderRadius.circular(8.0),
-                                      ),
+                                        decoration: BoxDecoration(
+                                          color: CustomColors.primaryColorLight,
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
                                         child: item.title.text
-                                            .color(Colors.white).paddingAll(4))),
+                                            .color(Colors.white)
+                                            .paddingAll(4))),
                                 Positioned(
                                     bottom: 8,
                                     left: 8,
                                     child: Container(
                                         decoration: BoxDecoration(
                                           color: CustomColors.primaryColorLight,
-                                          borderRadius: BorderRadius.circular(8.0),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
                                         ),
                                         child: item.description.text
-                                            .color(Colors.white).paddingAll(4)))
+                                            .color(Colors.white)
+                                            .paddingAll(4)))
                               ],
                             ),
                           ))
                       .toList(),
                 )
               else
-                SizedBox.shrink(),
+                const SizedBox.shrink(),
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                height: 120,
+                width: double.infinity,
+                child: Card(
+                  color: Colors.white70,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      "Store Management"
+                          .text
+                          .alignLeft
+                          .paddingOnly(top: 12, left: 12),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Inventory".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Accounting".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Wallet".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Teams".text
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                height: 120,
+                width: double.infinity,
+                child: Card(
+                  color: Colors.white70,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      "Reports"
+                          .text
+                          .alignLeft
+                          .paddingOnly(top: 12, left: 12),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Sales".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Products".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Expenses".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Income".text
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                height: 120,
+                width: double.infinity,
+                child: Card(
+                  color: Colors.white70,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      "Services"
+                          .text
+                          .alignLeft
+                          .paddingOnly(top: 12, left: 12),
+                      SizedBox(
+                        height: 12,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Shipping".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Payments".text
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Icon(Icons.account_circle_rounded),
+                              "Online Services".text
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
