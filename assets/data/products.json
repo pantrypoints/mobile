@@ -1,0 +1,5 @@
+[
+  {"name": "Product 1", "description":  "Description1", "image": "assets/images/product_image_1.jpg", "categories":  []},
+  {"name": "Product 1", "description":  "Description2", "image": "assets/images/product_image_2.jpg", "categories":  []},
+  {"name": "Product 1", "description":  "Description3", "image": "assets/images/product_image_3.jpg", "categories":  []}
+]

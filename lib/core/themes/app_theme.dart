@@ -6,9 +6,10 @@ class AppTheme {
   AppTheme._();
 
   static final ThemeData lightTheme = ThemeData(
+    primaryColor: CustomColors.primaryColorLight,
     scaffoldBackgroundColor: CustomColors.lightBG,
     brightness: Brightness.light,
-    appBarTheme: const AppBarTheme(
+    appBarTheme: AppBarTheme(
       shadowColor: CustomColors.primaryColorLight,
       elevation: 0.0,
       color: CustomColors.primaryColorLight,
