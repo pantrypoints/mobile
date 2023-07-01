@@ -11,64 +11,82 @@ class CashierPage extends GetView<CashierController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 32,
-          ),
-          Obx((){
-              return Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        controller.isClosing(true);
-                        Get.back();
-                      },
-                      child: controller.isClosing.value
-                          ? const CustomRotationWidget(
-                              duration: Duration(milliseconds: 600),
-                              child: Icon(
-                                Icons.keyboard_arrow_down_outlined,
-                                size: 32,
-                              ),
-                              startAngle: pi,
-                            )
-                          : CustomRotationWidget(
-                              duration: Duration(milliseconds: 600),
-                              child: Icon(
-                                Icons.arrow_back_ios,
-                                size: 32,
-                              ),
-                              startAngle: pi,
-                            ),
-                    ),
-                    SizedBox(
-                      width: 32,
-                    ),
-                    "Cashier".text.color(Theme.of(context).primaryColor).size(24)
-                  ],
-                ),
-              );
-            }
-          ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
+      body: Obx(() {
+        return Column(
+          children: [
+            const SizedBox(
+              height: 32,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
                 children: [
-                  const SizedBox(
-                    height: 64,
-                    width: double.infinity,
+                  InkWell(
+                    onTap: () {
+                      controller.isClosing(true);
+                      Get.back();
+                    },
+                    child: controller.isClosing.value
+                        ? const CustomRotationWidget(
+                            duration: Duration(milliseconds: 600),
+                            child: Icon(
+                              Icons.keyboard_arrow_down_outlined,
+                              size: 32,
+                            ),
+                            startAngle: -pi,
+                      reverse: true,
+                          )
+                        : CustomRotationWidget(
+                            duration: Duration(milliseconds: 600),
+                            child: Icon(
+                              Icons.arrow_back_ios,
+                              size: 32,
+                            ),
+                            startAngle: pi,
+                          ),
                   ),
+                  SizedBox(
+                    width: 32,
+                  ),
+                  "Cashier".text.size(24).color(Theme.of(context).primaryColor)
                 ],
               ),
             ),
-          ),
-        ],
-      ),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const SizedBox(
+                      height: 64,
+                      width: double.infinity,
+                    ),
+                    if (controller.hasProduct.value)
+                      SizedBox(
+                        height: 320,
+                        child: ListView(
+                          children: [
+                            ...controller.products.map((element) => ListTile(
+                              title: element.name.text,
+                              subtitle: element.description.text,
+                              leading: Image.asset(element.image,
+                                fit: BoxFit.cover,
+                              ),
+                            ))
+                          ],
+                        ),
+                      ),
+                  ],
+                ),
+              ),
+            ),
+
+
+            SizedBox(height: 16,)
+          ],
+        );
+      }),
     );
   }
 }
