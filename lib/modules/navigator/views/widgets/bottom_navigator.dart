@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:prenuer/core/helpers/custom_colors.dart';
+import 'package:prenuer/modules/cashier/bindings/cashier_binding.dart';
 import 'package:prenuer/modules/cashier/views/pages/cachier_page.dart';
 import 'package:prenuer/modules/home/views/pages/home_page.dart';
 import 'package:prenuer/modules/navigator/controllers/bottom_navigator_controller.dart';
@@ -82,17 +83,23 @@ class BottomNavigator extends GetView<BottomNavigatorController> {
               ),
             ),
           ),
-          floatingActionButton: Container(
-              decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: CustomColors.primaryColorLight),
-              child: const Padding(
-                padding: EdgeInsets.all(4.0),
-                child: Icon(
-                  Icons.calculate_sharp,
-                  color: Colors.white,
-                ),
-              )),
+          floatingActionButton: InkWell(
+            onTap: () {
+              Get.to(() => const CashierPage(),
+                  transition: Transition.downToUp, binding: CashierBinding());
+            },
+            child: Container(
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: CustomColors.primaryColorLight),
+                child: const Padding(
+                  padding: EdgeInsets.all(4.0),
+                  child: Icon(
+                    Icons.calculate_sharp,
+                    color: Colors.white,
+                  ),
+                )),
+          ),
           floatingActionButtonLocation:
               FloatingActionButtonLocation.centerDocked,
         );
