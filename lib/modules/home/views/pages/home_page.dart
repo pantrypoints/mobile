@@ -48,7 +48,7 @@ class HomePage extends GetView<HomeController> {
                                     left: 8,
                                     child: Container(
                                         decoration: BoxDecoration(
-                                          color: CustomColors.primaryColorLight,
+                                          color: CustomColors.primaryColorLight.withOpacity(.5),
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                         ),
@@ -60,7 +60,7 @@ class HomePage extends GetView<HomeController> {
                                     left: 8,
                                     child: Container(
                                         decoration: BoxDecoration(
-                                          color: CustomColors.primaryColorLight,
+                                          color: CustomColors.primaryColorLight.withOpacity(.5),
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                         ),
@@ -82,7 +82,7 @@ class HomePage extends GetView<HomeController> {
                 height: 120,
                 width: double.infinity,
                 child: Card(
-                  color: Colors.white70,
+                  color: Colors.white70.withOpacity(1),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -98,25 +98,25 @@ class HomePage extends GetView<HomeController> {
                         children: [
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.inventory_2_outlined),
                               "Inventory".text
                             ],
                           ),
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.money),
                               "Accounting".text
                             ],
                           ),
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.wallet),
                               "Wallet".text
                             ],
                           ),
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.group),
                               "Teams".text
                             ],
                           ),
@@ -134,7 +134,7 @@ class HomePage extends GetView<HomeController> {
                 height: 120,
                 width: double.infinity,
                 child: Card(
-                  color: Colors.white70,
+                  color: Colors.white70.withOpacity(1),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -142,7 +142,7 @@ class HomePage extends GetView<HomeController> {
                           .text
                           .alignLeft
                           .paddingOnly(top: 12, left: 12),
-                      SizedBox(
+                      const SizedBox(
                         height: 12,
                       ),
                       Row(
@@ -150,25 +150,25 @@ class HomePage extends GetView<HomeController> {
                         children: [
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.bar_chart),
                               "Sales".text
                             ],
                           ),
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.chair_outlined),
                               "Products".text
                             ],
                           ),
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.monetization_on),
                               "Expenses".text
                             ],
                           ),
                           Column(
                             children: [
-                              Icon(Icons.account_circle_rounded),
+                              Icon(Icons.currency_exchange_rounded),
                               "Income".text
                             ],
                           ),
@@ -186,7 +186,7 @@ class HomePage extends GetView<HomeController> {
                 height: 120,
                 width: double.infinity,
                 child: Card(
-                  color: Colors.white70,
+                  color: Colors.white70.withOpacity(1),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -200,23 +200,29 @@ class HomePage extends GetView<HomeController> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Column(
-                            children: [
-                              Icon(Icons.account_circle_rounded),
-                              "Shipping".text
-                            ],
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Icon(Icons.car_repair_sharp),
+                                "Shipping".text
+                              ],
+                            ),
                           ),
-                          Column(
-                            children: [
-                              Icon(Icons.account_circle_rounded),
-                              "Payments".text
-                            ],
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Icon(Icons.payments_rounded),
+                                "Payments".text
+                              ],
+                            ),
                           ),
-                          Column(
-                            children: [
-                              Icon(Icons.account_circle_rounded),
-                              "Online Services".text
-                            ],
+                          Expanded(
+                            child: Column(
+                              children: [
+                                Icon(Icons.language_outlined),
+                                "Online Services".text
+                              ],
+                            ),
                           ),
                         ],
                       ),
