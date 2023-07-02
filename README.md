@@ -1,16 +1,9 @@
-# prenuer
+# Readne
 
-A new Flutter project.
+This is the mobile app for the Enstack Hackathon entry by Team Pantrpoints 
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Instuctions
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Install Flutter
+2. Run `flutter run`
