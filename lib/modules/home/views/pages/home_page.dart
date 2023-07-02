@@ -22,61 +22,7 @@ class HomePage extends GetView<HomeController> {
                 height: 64,
                 width: double.infinity,
               ),
-              if (controller.hasFeature.value)
-                CarouselSlider(
-                  options: CarouselOptions(
-                    height: 180,
-                    viewportFraction: 1,
-                    enlargeCenterPage: false,
-                    scrollDirection: Axis.horizontal,
-                    autoPlay: true,
-                    autoPlayInterval: Duration(seconds: 7),
-                    autoPlayAnimationDuration: Duration(milliseconds: 1000),
-                    autoPlayCurve: Curves.fastOutSlowIn,
-                  ),
-                  items: controller.features
-                      .map((item) => Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 4),
-                            child: Stack(
-                              children: [
-                                Center(
-                                    child: Image.asset(item.image,
-                                        fit: BoxFit.cover,
-                                        width: double.infinity)),
-                                Positioned(
-                                    top: 8,
-                                    left: 8,
-                                    child: Container(
-                                        decoration: BoxDecoration(
-                                          color: CustomColors.primaryColorLight.withOpacity(.5),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        child: item.title.text
-                                            .color(Colors.white)
-                                            .paddingAll(4))),
-                                Positioned(
-                                    bottom: 8,
-                                    left: 8,
-                                    child: Container(
-                                        decoration: BoxDecoration(
-                                          color: CustomColors.primaryColorLight.withOpacity(.5),
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                        ),
-                                        child: item.description.text
-                                            .color(Colors.white)
-                                            .paddingAll(4)))
-                              ],
-                            ),
-                          ))
-                      .toList(),
-                )
-              else
-                const SizedBox.shrink(),
-              SizedBox(
-                height: 16,
-              ),
+              Text('Welcome!'),
               Container(
                 margin: EdgeInsets.symmetric(horizontal: 8),
                 height: 120,
@@ -126,6 +72,7 @@ class HomePage extends GetView<HomeController> {
                   ),
                 ),
               ),
+
               SizedBox(
                 height: 16,
               ),
@@ -229,7 +176,62 @@ class HomePage extends GetView<HomeController> {
                     ],
                   ),
                 ),
-              )
+              ),
+              if (controller.hasFeature.value)
+                CarouselSlider(
+                  options: CarouselOptions(
+                    height: 180,
+                    viewportFraction: 1,
+                    enlargeCenterPage: false,
+                    scrollDirection: Axis.horizontal,
+                    autoPlay: true,
+                    autoPlayInterval: Duration(seconds: 7),
+                    autoPlayAnimationDuration: Duration(milliseconds: 1000),
+                    autoPlayCurve: Curves.fastOutSlowIn,
+                  ),
+                  items: controller.features
+                      .map((item) => Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 4),
+                            child: Stack(
+                              children: [
+                                Center(
+                                    child: Image.asset(item.image,
+                                        fit: BoxFit.cover,
+                                        width: double.infinity)),
+                                Positioned(
+                                    top: 8,
+                                    left: 8,
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                          color: CustomColors.primaryColorLight.withOpacity(.5),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        child: item.title.text
+                                            .color(Colors.white)
+                                            .paddingAll(4))),
+                                Positioned(
+                                    bottom: 8,
+                                    left: 8,
+                                    child: Container(
+                                        decoration: BoxDecoration(
+                                          color: CustomColors.primaryColorLight.withOpacity(.5),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        child: item.description.text
+                                            .color(Colors.white)
+                                            .paddingAll(4)))
+                              ],
+                            ),
+                          ))
+                      .toList(),
+                )
+              else
+                const SizedBox.shrink(),
+              SizedBox(
+                height: 16,
+              ),              
             ],
           ),
         ),

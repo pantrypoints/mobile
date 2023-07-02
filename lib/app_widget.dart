@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:prenuer/core/themes/app_theme.dart';
 import 'package:prenuer/modules/navigator/bindings/bottom_navigator_binding.dart';
 import 'package:prenuer/modules/navigator/views/widgets/bottom_navigator.dart';
+import 'package:prenuer/modules/cashier/views/pages/checkout.dart';
+
 
 class AppWidget extends StatelessWidget {
   const AppWidget({super.key});
@@ -12,11 +14,17 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GetMaterialApp(
-      title: 'Prenuer',
+      title: 'Preneur',
       theme: AppTheme.lightTheme,
       initialBinding: BottomNavigatorBinding(),
       home: BottomNavigator(),
       debugShowCheckedModeBanner: false,
+      getPages: [
+        GetPage(
+          name: '/checkout',
+          page: () => Checkout(),
+        ),
+      ],      
     );
   }
 }
